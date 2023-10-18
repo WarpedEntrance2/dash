@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon'
 
 <form class="login-form space-content" method="post">
   <Notification type="warning">
-    <Icon pack="majesticons" name="emoji-sad-line" /><p class="size-12">Incorrect email and password combination. Please try again.</p>
+    <Icon pack="majesticons" name="emoji-sad-line" /><p class="size-12">Denied</p>
   </Notification>
   <div class="login-form__controls">
     <label for="email">Email</label>
@@ -20,7 +20,7 @@ import { Icon } from 'astro-icon'
     <input type="checkbox" name="remember">
     <span>Remember me</span>
   </label>
-  <a href="#">Forgot password?</a>
+  <a href="#">Forgot password? Idc</a>
 </form> 
 
 <script>
@@ -38,6 +38,13 @@ import { Icon } from 'astro-icon'
     event.preventDefault()
 
     if (emailInput.value === 'admin@ote.demo' && passwordInput.value === 'async') {
+      localStorage.setItem('isLoggedIn', 'true')
+      window.location.href = '/'
+    } else {
+      notification.style.display = 'flex'
+    }
+  })
+    if (emailInput.value === 'User1N@ote.demo' && passwordInput.value === 'Neil') {
       localStorage.setItem('isLoggedIn', 'true')
       window.location.href = '/'
     } else {
